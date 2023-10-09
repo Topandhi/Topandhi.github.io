@@ -21,6 +21,14 @@
     <div style="display:flex;flex-direction:row;justify-content:center;">
         <divmeter data-height="200px" data-time="2014-01-11T01:12:59.371Z" data-type="static" id="divmeter-1672461300374" class="divmeter divmeter-complete"><img id="i0" src="https://raw.github.com/dogancelik/divergence-meter/gh-pages/img/0.jpg" style="height: 200px;"><img id="in" src="https://raw.github.com/dogancelik/divergence-meter/gh-pages/img/11.jpg" style="height: 200px;"><img id="i1" src="https://raw.github.com/dogancelik/divergence-meter/gh-pages/img/0.jpg" style="height: 200px;"><img id="i2" src="https://raw.github.com/dogancelik/divergence-meter/gh-pages/img/0.jpg" style="height: 200px;"><img id="i3" src="https://raw.github.com/dogancelik/divergence-meter/gh-pages/img/0.jpg" style="height: 200px;"><img id="i4" src="https://raw.github.com/dogancelik/divergence-meter/gh-pages/img/0.jpg" style="height: 200px;"><img id="i5" src="https://raw.github.com/dogancelik/divergence-meter/gh-pages/img/0.jpg" style="height: 200px;"><img id="i6" src="https://raw.github.com/dogancelik/divergence-meter/gh-pages/img/0.jpg" style="height: 200px;"></divmeter>
     </div>
+    <div style="display:flex;flex-direction:row;justify-content:center;">
+        <div style="font-size:40px;text-decoration:underline;font-weight:700;">Divergence Metter</div>
+    </div>
+    <br>
+    <br>
+    <div style="display:flex;flex-direction:row;justify-content:center;">
+        <divmeter data-height="200px" data-time="2014-01-11T01:12:59.371Z" data-type="static" id="divmeter-1672461300374" class="divmeter divmeter-complete"><img id="ix0" src="https://raw.github.com/dogancelik/divergence-meter/gh-pages/img/0.jpg" style="height: 200px;"><img id="ixn" src="https://raw.github.com/dogancelik/divergence-meter/gh-pages/img/11.jpg" style="height: 200px;"><img id="ix1" src="https://raw.github.com/dogancelik/divergence-meter/gh-pages/img/0.jpg" style="height: 200px;"><img id="ix2" src="https://raw.github.com/dogancelik/divergence-meter/gh-pages/img/0.jpg" style="height: 200px;"><img id="ix3" src="https://raw.github.com/dogancelik/divergence-meter/gh-pages/img/0.jpg" style="height: 200px;"><img id="ix4" src="https://raw.github.com/dogancelik/divergence-meter/gh-pages/img/0.jpg" style="height: 200px;"><img id="ix5" src="https://raw.github.com/dogancelik/divergence-meter/gh-pages/img/0.jpg" style="height: 200px;"><img id="ix6" src="https://raw.github.com/dogancelik/divergence-meter/gh-pages/img/0.jpg" style="height: 200px;"></divmeter>
+    </div>
     <!-- <div style="display:flex;flex-direction:row;justify-content:flex-end;">
         <img src="Poppin_Western_Journey_Saaya.png"  width="50%">
     </div> -->
@@ -82,13 +90,6 @@
             console.log(`Days: ${formattedDays}, Hours: ${formattedHours}, Minutes: ${formattedMinutes}, Seconds: ${formattedSeconds}`);
             var min = 0;
             var max = images.length-1;
-            // var r = <?= $r[0]; ?>;
-            // var r1 = <?= $r[1]; ?>;
-            // var r2 = <?= $r[2]; ?>;
-            // var r3 = <?= $r[3]; ?>;
-            // var r4 = <?= $hours[0]; ?>;
-            // var r5 = <?= $hours[1]; ?>;
-            // var r6 = <?= $minutes ?>;
             
             var r = formattedDays[0];
             var r1 = formattedDays[1];
@@ -117,6 +118,111 @@
 
             window.onload = function () {
                 setInterval(change, 60000);
+            };
+        </script>
+        
+        <script>
+            function getRandomInt(min, max) {
+            min = Math.ceil(min); // Round up the minimum value
+            max = Math.floor(max); // Round down the maximum value
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+            }
+
+
+            let indexX = 0;
+            const imgElementX = document.querySelector('#ix0');
+            const imgElementX1 = document.querySelector('#ix1');
+            const imgElementX2 = document.querySelector('#ix2');
+            const imgElementX3 = document.querySelector('#ix3');
+            const imgElementX4 = document.querySelector('#ix4');
+            const imgElementX5 = document.querySelector('#ix5');
+            const imgElementX6 = document.querySelector('#ix6');
+
+            function changeX(index=-1) {
+            var min = 0;
+            var max = images.length-1;
+            
+                var r = localStorage.getItem('ix0');
+                var r1 = localStorage.getItem('ix1');
+                var r2 = localStorage.getItem('ix2');
+                var r3 = localStorage.getItem('ix3');
+                var r4 = localStorage.getItem('ix4');
+                var r5 = localStorage.getItem('ix5');
+                var r6 = localStorage.getItem('ix6');
+            if(index==-1){
+                var r = 1;
+                var r1 = 0;
+                var r2 = 4;
+                var r3 = 8;
+                var r4 = 5;
+                var r5 = 9;
+                var r6 = 6;
+            }
+
+            if(index==0){
+                r = getRandomInt(0, 9);
+            }
+            if(index==1){
+                r1 = getRandomInt(0, 9);
+            }
+            if(index==2){
+                r2 = getRandomInt(0, 9);
+            }
+            if(index==3){
+                r3 = getRandomInt(0, 9);
+            }
+            if(index==4){
+                r4 = getRandomInt(0, 9);
+            }
+            if(index==5){
+                r5 = getRandomInt(0, 9);
+            }
+            if(index==6){
+                r6 = getRandomInt(0, 9);
+            }
+                // console.log('imgElementX',imgElementX,r,r1,r2,r3,r4,r5,r6);
+                imgElementX.src = images[r];
+                imgElementX1.src = images[r1];
+                imgElementX2.src = images[r2];
+                imgElementX3.src = images[r3];
+                imgElementX4.src = images[r4];
+                imgElementX5.src = images[r5];
+                imgElementX6.src = images[r6];
+                localStorage.setItem('ix0',r);
+                localStorage.setItem('ix1',r1);
+                localStorage.setItem('ix2',r2);
+                localStorage.setItem('ix3',r3);
+                localStorage.setItem('ix4',r4);
+                localStorage.setItem('ix5',r5);
+                localStorage.setItem('ix6',r6);
+            }
+            changeX();
+
+            window.onload = function () {
+                setInterval(()=>{
+                    changeX(0);
+                }, 86400000);
+                setInterval(()=>{
+                    changeX(1);
+                }, 43200000);
+                setInterval(()=>{
+                    changeX(2);
+                }, 3600000);
+                setInterval(()=>{
+                    changeX(3);
+                }, 1800000);
+                setInterval(()=>{
+                    changeX(4);
+                }, 600000);
+                setInterval(()=>{
+                    changeX(5);
+                }, 300000);
+                setInterval(()=>{
+                    changeX(5);
+                }, 600000);
+                setInterval(()=>{
+                    changeX(6);
+                }, 10000);
             };
         </script>
 </html>
